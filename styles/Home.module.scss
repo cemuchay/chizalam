@@ -1,2 +1,19 @@
 @import './helpers/mixins';
 @import './helpers/variables';
+
+.container {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../public/images/background.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    height: 100vh;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}

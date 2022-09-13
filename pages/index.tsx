@@ -5,18 +5,20 @@ import { Container } from 'react-bootstrap';
 
 const Index = () => {
   return (
-    <Container fluid>
-
+    <Container fluid className={styles.container}>
+      <h1 className='h1'>
+        Chizalam Emuchay
+      </h1>
     </Container>
   );
 }
 
 export default Index;
 
-Index.getLayout = (page: ReactElement) => {
-  return (
-    <Layout>
-      {page}
-    </Layout>
-  )
-}
+// Index.getLayout = (page: ReactElement) => {
+//   return (
+//     <Layout>
+//       {page}
+//     </Layout>
+//   )
+// }

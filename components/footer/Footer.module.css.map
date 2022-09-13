@@ -1,11 +1,1 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "Footer.module.scss",
-        "../../styles/helpers/_mixins.scss",
-        "../../styles/helpers/_variables.scss"
-    ],
-    "names": [],
-    "file": "Footer.module.css"
-}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"Footer.module.css"}
