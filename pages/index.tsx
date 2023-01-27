@@ -28,10 +28,10 @@ const HeroSection = () => {
   return (
     //@ts-ignore
     <div className="hero-section" style={heroSectionStyles}>
-      <h1 style={heroTextStyles}>Welcome to My Website</h1>
+      <h1 style={heroTextStyles}>Welcome, I Am Chizalam Emuchay</h1>
       <div style={buttonContainerStyles}>
         <button style={buttonStyles}>Learn More</button>
-        <button style={buttonStyles}>Contact Us</button>
+        <button style={buttonStyles}>Contact Me</button>
       </div>
     </div>
   );
