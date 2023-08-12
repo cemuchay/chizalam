@@ -19,7 +19,7 @@ const ProjectCard = ({ project }: { project: any }) => {
           ></iframe>
         </div>
       </div>
-      <a href={project.liveLink} target="_blank" className="text-blue-500 hover:text-blue-300">
+      <a href={project.liveLink} target="_blank" rel="noreferrer" className="text-blue-500 hover:text-blue-300">
         View Full Website
       </a>
     </div>

@@ -17,19 +17,19 @@ const AboutPage = () => {
         </motion.h1>
 
           <p className="text-gray-400 mb-6">
-            I'm Chizalam Emuchay, a Front-End Engineer based in Nigeria. I have
+            I&apos;m Chizalam Emuchay, a Front-End Engineer based in Nigeria. I have
             a passion for creating engaging and user-friendly web experiences. I
             specialize in JavaScript, TypeScript, Next.js, React, and other modern
             front-end technologies.
           </p>
           <p className="text-gray-400 mb-6">
             My expertise also extends to CSS frameworks like Tailwind CSS and Sass.
-            I enjoy turning complex problems into elegant solutions and I'm always
+            I enjoy turning complex problems into elegant solutions and I&apos;m always
             looking for opportunities to learn and grow in the ever-evolving world
             of front-end development.
           </p>
           <p className="text-gray-400">
-            When I'm not coding, you can find me exploring new technologies,
+            When I&apos;m not coding, you can find me exploring new technologies,
             contributing to open-source projects, and sharing my knowledge with
             the developer community.
           </p>

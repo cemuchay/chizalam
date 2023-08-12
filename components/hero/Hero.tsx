@@ -17,7 +17,7 @@ const Hero = () => {
           transition={{ delay: 0.3 }}
           className="text-4xl font-bold mb-4"
         >
-        <h1 className="text-4xl font-bold mb-4">Hello, I'm Chizalam Emuchay</h1>
+        <h1 className="text-4xl font-bold mb-4">Hello, I&apos;m Chizalam Emuchay</h1>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: -20 }}
@@ -36,10 +36,10 @@ const Hero = () => {
           className="flex justify-center space-x-4"
         >
         <div className="flex justify-center space-x-4">
-          <a href="https://github.com/cemuchay" target="_blank" className="text-blue-500 hover:text-blue-300">
+          <a href="https://github.com/cemuchay" target="_blank" rel="noreferrer" className="text-blue-500 hover:text-blue-300">
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/chizalam-emuchay-35b02492/" target="_blank" className="text-blue-500 hover:text-blue-300">
+          <a href="https://www.linkedin.com/in/chizalam-emuchay-35b02492/" target="_blank" rel="noreferrer" className="text-blue-500 hover:text-blue-300">
             LinkedIn
           </a>
         </div>
