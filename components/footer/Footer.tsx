@@ -1,11 +1,11 @@
-import styles from '../styles/Footer.module.css';
-
 const Footer = () => {
-    return (
-        <div className='text-center'>
-            Footer
-        </div>
-    );
-}
+  return (
+    <footer className="bg-gray-900 py-4">
+      <div className="container mx-auto text-center text-white">
+        <p>&copy; {new Date().getFullYear()} Chizalam Emuchay. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;
