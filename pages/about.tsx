@@ -1,84 +1,96 @@
-import Layout from '../components/layout/Layout';
-import { Link as ScrollLink } from 'react-scroll'
 import { motion } from 'framer-motion';
+import { Link as ScrollLink } from 'react-scroll';
+import Layout from '../components/layout/Layout';
 
 const AboutPage = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const hobbies = ["Reading Voraciously", "Drone Photography", "Writing"];
+
   return (
     <Layout>
-      <div className="container mx-auto py-12">
-        <div className="bg-gray-800 p-6 rounded-lg shadow-md">
-     
-          <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-3xl font-semibold text-white mb-8"
-        >
-          About Me
-        </motion.h1>
-
-          <p className="text-gray-400 mb-6">
-            I&apos;m Chizalam Emuchay, a Front-End Engineer based in Nigeria. I have
-            a passion for creating engaging and user-friendly web experiences. I
-            specialize in JavaScript, TypeScript, Next.js, React, and other modern
-            front-end technologies.
-          </p>
-          <p className="text-gray-400 mb-6">
-            My expertise also extends to CSS frameworks like Tailwind CSS and Sass.
-            I enjoy turning complex problems into elegant solutions and I&apos;m always
-            looking for opportunities to learn and grow in the ever-evolving world
-            of front-end development.
-          </p>
-          <p className="text-gray-400">
-            When I&apos;m not coding, you can find me exploring new technologies,
-            contributing to open-source projects, and sharing my knowledge with
-            the developer community.
-          </p>
-        </div>
-        <div className="mt-12">
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-2xl font-semibold text-white mb-4"
-          >
-            Hobbies
-          </motion.h2>
-          <ul className="text-gray-400">
-            <motion.li
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="mb-2"
-            >
-              Reading
-            </motion.li>
-            <motion.li
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="mb-2"
-            >
-              Drone Photography
-            </motion.li>
-            <motion.li
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-            >
-              Writing
-            </motion.li>
-          </ul>
-        </div>
+      <div className="max-w-5xl mx-auto px-6 py-20">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mt-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-16"
         >
-          <ScrollLink to="contact" smooth={true} duration={500}>
-            <a className="text-blue-500 hover:text-blue-300">Contact Me</a>
-          </ScrollLink>
+          {/* Main Bio - 7 Columns */}
+          <div className="lg:col-span-7 space-y-8">
+            <motion.div variants={itemVariants} className="space-y-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+                About <span className="text-cyan-400">Me.</span>
+              </h1>
+              <div className="h-1 w-20 bg-cyan-500 rounded-full" />
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="space-y-6 text-slate-400 text-lg leading-relaxed">
+              <p>
+                I&apos;m <span className="text-white font-medium">Chizalam Emuchay</span>, a Front-End Engineer
+                shaping digital experiences from Nigeria. I bridge the gap between complex logic and
+                elegant design, focusing on high-performance applications.
+              </p>
+              <p>
+                My core expertise lies in the <span className="text-white">React ecosystem</span>—specifically
+                TypeScript and Next.js—where I turn architectural challenges into seamless user journeys.
+                I treat CSS as a first-class citizen, leveraging Tailwind CSS to build scalable design systems.
+              </p>
+              <p>
+                Outside of my IDE, I am deeply committed to the business side of things and in mentoring emerging talents.
+              </p>
+            </motion.div>
+
+            {/* <motion.div variants={itemVariants} className="pt-4">
+              <ScrollLink to="contact" smooth={true} duration={500} offset={-100}>
+                <button className="px-8 py-3 rounded-full bg-white text-slate-950 font-bold hover:bg-cyan-400 hover:text-white transition-all duration-300">
+                  Let&apos;s Connect
+                </button>
+              </ScrollLink>
+            </motion.div> */}
+          </div>
+
+          {/* Sidebar - 5 Columns */}
+          <div className="lg:col-span-5 space-y-12">
+            <motion.div variants={itemVariants} className="p-8 rounded-3xl bg-white/5 border border-white/5">
+              <h2 className="text-xl font-bold text-white mb-6 flex items-center">
+                <span className="w-8 h-[1px] bg-cyan-500 mr-4" />
+                Interests
+              </h2>
+              <div className="flex flex-col gap-4">
+                {hobbies.map((hobby) => (
+                  <div
+                    key={hobby}
+                    className="flex items-center text-slate-300 group"
+                  >
+                    <div className="w-2 h-2 rounded-full border border-cyan-500 mr-4 group-hover:bg-cyan-500 transition-colors" />
+                    <span className="text-lg font-medium">{hobby}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="px-8">
+              <h2 className="text-sm font-mono text-cyan-400 uppercase tracking-widest mb-4">
+                Current Location
+              </h2>
+              <p className="text-white text-lg">Aba, Abia State — Nigeria</p>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
-      </Layout>
+    </Layout>
   );
 };
 

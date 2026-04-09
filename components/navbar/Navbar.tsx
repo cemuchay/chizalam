@@ -1,43 +1,54 @@
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const Navbar = () => {
-  const navLinks =  [
-    {
-      title: 'Home',
-      to: '/',
-    },
-    {
-      title: 'Projects',
-      to: '/projects',
-    },
-    {
-      title: 'About',
-      to: '/about',
-    },
-  ]
-  return (
-    <nav className="bg-gray-900 py-4 px-8">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link href="/">
-          <a className="text-white text-2xl font-semibold">CE</a>
-        </Link>
-        <div>
-        {
-  navLinks.map((link: any) => (
-    <motion.a
-      key={link.id}
-      href={link.to}
-      className="text-gray-300 hover:text-white mx-4"
-      whileHover={{ scale: 1.1, color: 'white' }}
-      style={{ display: 'inline-block' }} // Add this style
-    >
-      {link.title}
-    </motion.a>
-  ))
+interface NavLink {
+  title: string;
+  href: string;
 }
 
+const navLinks: NavLink[] = [
+  { title: 'Home', href: '/' },
+  { title: 'Projects', href: '/projects' },
+  { title: 'About', href: '/about' },
+];
 
+const Navbar = () => {
+  const { pathname } = useRouter();
+
+  return (
+    <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-slate-950/50 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+        <Link href="/" passHref>
+          <a className="text-white text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
+            CE
+          </a>
+        </Link>
+
+        <div className="flex items-center gap-2">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            
+            return (
+              <Link key={link.href} href={link.href} passHref>
+                <a className="relative px-4 py-2 group">
+                  <span className={`relative z-10 text-sm font-medium transition-colors ${
+                    isActive ? 'text-white' : 'text-slate-400 group-hover:text-white'
+                  }`}>
+                    {link.title}
+                  </span>
+                  
+                  {isActive && (
+                    <motion.div
+                      layoutId="navbar-active"
+                      className="absolute inset-0 bg-white/10 rounded-lg"
+                      transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
+                </a>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </nav>
