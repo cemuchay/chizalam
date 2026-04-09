@@ -3,7 +3,7 @@ const projects = [
       id: 1,
       title: "Hospital Management Software",
       description:
-         "A professional healthcare platform showcasing medical services and facility information for the Azumini community.",
+         "A modern healthcare platform designed to streamline hospital operations, manage patient data, and present medical services",
       image: "/images/hms.webp",
       tags: ["Next.js", "Tailwind CSS", "MongoDB"],
       liveLink: "N/A",
@@ -12,7 +12,7 @@ const projects = [
       id: 4,
       title: "📊 Smart Dashboard Builder",
       description:
-         "A high-utility web application helping Nigerian voters locate their specific polling units using PU numbers.",
+         "A flexible dashboard builder that allows users to create, customize, and visualize data-driven interfaces with dynamic components and real-time updates.",
       image: "/images/smart-dashboard-builder.webp",
       tags: ["TypeScript", "Next.js"],
       liveLink: "https://smart-dashboard-builder.vercel.app/",
@@ -31,7 +31,7 @@ const projects = [
       id: 3,
       title: "INEC Polling Unit Finder",
       description:
-         "A high-utility web application helping Nigerian voters locate their specific polling units using PU numbers.",
+         "A practical civic tool that enables Nigerian voters to quickly locate their polling units using PU numbers, improving accessibility and election readiness.",
       image: "/images/INEC-PU.webp",
       tags: ["TypeScript", "Next.js"],
       liveLink: "https://inec-polling-unit-finder.vercel.app/",
