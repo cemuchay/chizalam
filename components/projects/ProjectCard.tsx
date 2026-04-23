@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import ProjectImage from '../ProjectImage/ProjectImage';
+import Link from 'next/link';
 
 
 interface Project {
@@ -9,6 +10,7 @@ interface Project {
   githubLink?: string; // Optional GitHub link
   tags?: string[];
   image?: string;
+  caseStudy?: string;
 }
 
 interface ProjectCardProps {
@@ -18,6 +20,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const isPrivate = project.liveLink === 'N/A';
   const hasGithub = project.githubLink && project.githubLink !== 'N/A';
+  const hasCaseStudy = project.caseStudy
 
   return (
     <motion.div
@@ -41,7 +44,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
           {project.title}
         </h3>
-        
+
         <p className="text-slate-400 text-sm mb-6 line-clamp-2">
           {project.description}
         </p>
@@ -66,24 +69,35 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             </div>
           ) : (
             <>
-              <a 
-                href={project.liveLink} 
-                target="_blank" 
-                rel="noreferrer" 
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noreferrer"
                 className="text-sm font-semibold text-white hover:text-cyan-400 transition-colors"
               >
                 Live Demo <span className="text-cyan-400 ml-1">→</span>
               </a>
 
               {hasGithub && (
-                <a 
-                  href={project.githubLink} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noreferrer"
                   className="text-sm font-semibold text-slate-400 hover:text-white transition-colors flex items-center"
                 >
                   Source <span className="ml-1 opacity-50 group-hover:opacity-100">↗</span>
                 </a>
+              )}
+
+
+              {hasCaseStudy && (
+                <Link href={project.caseStudy as string} passHref legacyBehavior>
+                  <a
+                    className="text-sm font-semibold text-slate-400 hover:text-white transition-colors flex items-center"
+                  >
+                    Case Sudy <span className="ml-1 opacity-50 group-hover:opacity-100">↗</span>
+                  </a>
+                </Link>
               )}
             </>
           )}
