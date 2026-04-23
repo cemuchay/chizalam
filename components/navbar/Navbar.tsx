@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-slate-950/50 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
-        <Link href="/" passHref>
+        <Link href="/" passHref legacyBehavior>
           <a className="text-white text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
             CE
           </a>
@@ -30,7 +30,7 @@ const Navbar = () => {
             const isActive = pathname === link.href;
             
             return (
-              <Link key={link.href} href={link.href} passHref>
+              <Link key={link.href} href={link.href} passHref legacyBehavior>
                 <a className="relative px-4 py-2 group">
                   <span className={`relative z-10 text-sm font-medium transition-colors ${
                     isActive ? 'text-white' : 'text-slate-400 group-hover:text-white'
